@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
-import { ThemeContext } from './App'
-import './theme.css'
+import { ThemeContext } from './ThemeContext'
 function FunctionContextComponent() {
-    const {dark,setDark} = useContext(ThemeContext)
+    const {dark,toggleTheme} = useContext(ThemeContext)
     // console.log(darkTheme);
     const theme={
       backgroundColor: dark?'#333':'#ccc',
@@ -17,7 +16,7 @@ function FunctionContextComponent() {
             function Context 
             <br></br>
             <br></br>
-            <button onClick={()=>setDark(prev=>!prev)}>change theme</button>
+            <button onClick={toggleTheme}>change theme</button>
 
         </div>
     )

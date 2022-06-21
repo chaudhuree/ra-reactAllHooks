@@ -1,8 +1,7 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './App.css';
 import ContextApi from './FunctionContextComponent'
-
-export const ThemeContext = React.createContext()
+import { ThemeProvider } from './ThemeContext';
 
 // function App() {
 //   return (
@@ -13,10 +12,9 @@ export const ThemeContext = React.createContext()
 // }
 
 function App() {
-  const [dark,setDark]=useState(true)
   return (
-    <ThemeContext.Provider value={{dark,setDark}}>
+    <ThemeProvider>
       <ContextApi />
-    </ThemeContext.Provider>
+    </ThemeProvider>
   )}
 export default App;
